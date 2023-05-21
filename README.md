@@ -27,7 +27,17 @@ https://hackernoon.com/how-to-get-sslhttps-for-localhost-i11s3342
 https://gist.github.com/cecilemuller/9492b848eb8fe46d462abeb26656c4f8
 
 You should crete certificate folder and another folder localhost into it. Then
-you should gererate your CA and private key and signed certficate into certioficate/localhost folder. 
+you should gererate your CA and private key and signed certficate into certioficate/localhost folder.
+Otherwise to make the code run locally you should use http insetad of https and make the
+respective changes.
+
+To pull latest Postgre image, type
+
+### `docker pull postgres:latest`
+
+To pull a specific image, type:
+
+### `docker pull postgres:13`
 
 To run Postgres locally, a docker image can be used:
 
