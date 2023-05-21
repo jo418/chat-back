@@ -1,11 +1,4 @@
 
-
-### `npm install`
-
-to run, type
-
-### `node server.js`
-
 To install OpenSSL in windows the following can be run:
 
 ### `choco install openssl`
@@ -42,3 +35,11 @@ To pull a specific image, type:
 To run Postgres locally, a docker image can be used:
 
 ### `docker run --name chat-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres`
+
+To initialize node, type
+
+### `npm install`
+
+to run, type
+
+### `node server.js`
