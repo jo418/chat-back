@@ -18,9 +18,12 @@ Then one should import authority CA.pem into browser, such ac chrome for instanc
 It is a vulnerability to store private keys into Git. As this a public repository, we don't store them in here.
 In the internet there are several atricles that instruct using self made certificates loacally.
 To learn more, please read the following:
-https://link.medium.com/PZ5ZmGErUzb
-https://hackernoon.com/how-to-get-sslhttps-for-localhost-i11s3342
-https://gist.github.com/cecilemuller/9492b848eb8fe46d462abeb26656c4f8
+
+#### https://link.medium.com/PZ5ZmGErUzb
+
+#### https://hackernoon.com/how-to-get-sslhttps-for-localhost-i11s3342
+
+#### https://gist.github.com/cecilemuller/9492b848eb8fe46d462abeb26656c4f8
 
 You should create 'certificate' folder and another folder 'localhost' into it. Then
 you should generate your CA and private key and signed certficate into certificate/localhost folder.
