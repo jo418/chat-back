@@ -80,10 +80,10 @@ app.get('/status', (req, res) => {
 
 // Save a new chat message
 app.post('/messages', (req, res) => {
-    console.log('req.body:', req.body);
+    //console.log('req.body:', req.body);
     const { name, text } = req.body;
     const selectQuery = 'SELECT * FROM users WHERE name = $1';
-    console.log('selectQuery=',selectQuery);
+    //console.log('selectQuery=',selectQuery);
     pool.query(selectQuery, [name], (err, result) => {
       if (err) {
         console.error('Error querying user data:', err);
@@ -91,7 +91,7 @@ app.post('/messages', (req, res) => {
         return;
       }
       const row = result.rows[0];
-      console.log('row=', row);
+      //console.log('row=', row);
       const userId = row.id;
       const mateId = 999; // placeholder for mutual messages, can be sued later
       const insertQuery = 'INSERT INTO messages (userId, mateId, text, timestamp) VALUES ($1, $2, $3, $4) RETURNING *';
@@ -108,9 +108,9 @@ app.post('/messages', (req, res) => {
 
 // Save name
 app.post('/name', (req, res) => {
-    console.log('req.body:', req.body);
+    //console.log('req.body:', req.body);
     const { name } = req.body;
-    console.log(name);
+    //console.log(name);
   
     const checkQuery = 'SELECT 1 FROM users WHERE name = $1';
     pool.query(checkQuery, [name], (err, result) => {
@@ -169,7 +169,7 @@ wss.on('connection', (ws) => {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
                 // Convert Buffer to string
                 const messageString = messageBuffer.toString('utf8');
-                console.log('client.send=', messageString);
+                //console.log('client.send=', messageString);
                 client.send(messageString);
             }
         });
@@ -179,5 +179,23 @@ wss.on('connection', (ws) => {
 // Start the HTTP server
 const port = 3001;
 server.listen(port, () => {
+  if (process.env.NODE_ENV !== 'test') {
     console.log(`Server running on http://localhost:${port}`);
+  }
 });
+
+// Function to gracefully close the server
+const closeServer = () => {
+  return new Promise((resolve) => {
+    server.close((err) => {
+      if (err) {
+        console.error('Error closing server:', err);
+      } else {
+        console.log('Server closed');
+      }
+      resolve();
+    });
+  });
+};
+
+module.exports = { app, server, closeServer };
