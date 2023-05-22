@@ -1,11 +1,10 @@
 
+In Windows use Bash terminal, or in Linux use your favorite terminal.
 To install OpenSSL in windows the following can be run:
 
 ```bash
 choco install openssl
 ```
-
-in the Git Bash terminal
 
 To generate private key and certificate one can use openssl.
 
