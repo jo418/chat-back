@@ -3,7 +3,9 @@ const https = require('https');
 const fs = require('fs');
 const WebSocket = require('ws');
 const { Pool } = require('pg');
-require('dotenv').config();
+//require('dotenv').config();
+require('dotenv').config({ path: '.dev-env' });
+
 const cors = require('cors');
 
 const bodyParser = require('body-parser');
