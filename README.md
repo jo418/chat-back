@@ -48,10 +48,11 @@ To run Postgres locally, a docker image can be used:
 docker run --name chat-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 ```
 
-To log into Postgres database, type
+To log into Postgres database, type:
 ```bash
 psql -U postgres
 ```
+To create database, type;
 
 ```SQL
 CREATE DATABASE chatdb;
