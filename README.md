@@ -58,6 +58,17 @@ To create database, type;
 CREATE DATABASE chatdb;
 ```
 
+To change server to use .env instead of .dev-env, use require('dotenv').config();
+instead of require('dotenv').config({ path: '.dev-env' }); in the server.js file.
+To run tests in your development eviront you should define your credentials in
+the .dev-env file, see
+
+DB_HOST=your_db_host 
+DB_PORT=your_db_port 
+DB_NAME=your_db_name 
+DB_USER=your_db_user 
+DB_PASSWORD=your_db_password 
+
 To initialize node, type
 
 ```bash
@@ -74,13 +85,3 @@ to run unit tests
 ```bash
 jest --verbose --detectOpenHandles --runInBand test/server.test.js
 ```
-To change server to use .env instead of .dev-env, use require('dotenv').config();
-instead of require('dotenv').config({ path: '.dev-env' }); in the server.js file.
-To run tests in your development eviront you should define your credentials in
-the .dev-env file, see
-
-DB_HOST=your_db_host
-DB_PORT=your_db_port
-DB_NAME=your_db_name
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
