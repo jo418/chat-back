@@ -1,14 +1,18 @@
 
 To install OpenSSL in windows the following can be run:
 
-### `choco install openssl`
+```bash
+choco install openssl
+```
 
 in the Git Bash terminal
 
 To generate private key and certificate one can use openssl.
 
-### `openssl genrsa -out private-key.key 2048`
-### `openssl req -new -x509 -sha256 -key private-key.key -out certificate.crt -days 365`
+```bash
+openssl genrsa -out private-key.key 2048
+openssl req -new -x509 -sha256 -key private-key.key -out certificate.crt -days 365
+```
 
 But well, it just not taht simple; toi develop locally one acn himself act as CA (certificate authority).
 Then one should import authority CA.pem into browser, such ac chrome for instance.
@@ -26,15 +30,21 @@ respective changes.
 
 To pull latest Postgre image, type
 
-### `docker pull postgres:latest`
+```bash
+docker pull postgres:latest
+```
 
 To pull a specific image, type:
 
-### `docker pull postgres:13`
+```bash
+docker pull postgres:13
+```
 
 To run Postgres locally, a docker image can be used:
 
-### `docker run --name chat-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres`
+```bash
+docker run --name chat-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+```
 
 To initialize node, type
 
