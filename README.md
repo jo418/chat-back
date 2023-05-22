@@ -38,8 +38,11 @@ To run Postgres locally, a docker image can be used:
 
 To initialize node, type
 
-### `npm install`
-
+```bash
+npm install
+```
 to run, type
 
-### `node server.js`
+```bash
+node server.js
+```
