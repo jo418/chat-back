@@ -166,10 +166,9 @@ wss.on('connection', (ws) => {
     // console.log('Socket message=', messageBuffer);
     // Broadcast the received message to all connected clients
     wss.clients.forEach((client) => {
-      if (client !== ws && client.readyState === WebSocket.OPEN) {
+      if (client !== ws && client.readyState === 1) { // used to be WebSocket.OPEN but not anymore
         // Convert Buffer to string
         const messageString = messageBuffer.toString('utf8');
-        //console.log('client.send=', messageString);
         client.send(messageString);
       }
     });
